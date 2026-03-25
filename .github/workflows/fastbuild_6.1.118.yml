@@ -231,7 +231,8 @@ jobs:
           cd kernel_workspace
           if [[ ${{ github.event.inputs.ksu_type }} == "sukisu" ]]; then
             echo "正在配置SukiSU Ultra..."
-            curl -LSs "https://raw.githubusercontent.com/ShirkNeko/SukiSU-Ultra/v4.1.2/kernel/setup.sh" | bash -s builtin#尝试指定版本tag
+            # 我为什么要乱写注释...前面把链接污染了，现在重新修正，指定KSU版本
+            curl -LSs "https://raw.githubusercontent.com/ShirkNeko/SukiSU-Ultra/v4.1.2/kernel/setup.sh" | bash -s builtin
             cd ./KernelSU
             # 获取当前 Git 提交的短哈希 (8位)
             GIT_COMMIT_HASH=$(git rev-parse --short=8 HEAD)
